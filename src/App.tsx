@@ -157,7 +157,7 @@ function App() {
             <section style={{ padding: "60px 20px", textAlign: "center" }}>
               <h2>{t.contactTitle}</h2>
               <p>WhatsApp: +55 22 99978-1304</p>
-              <p>Email: surf@arraailsurfschool.com</p>
+              <p>Email: surf@arraialsurfschool.com</p>
             </section>
           </div>
         }
