@@ -1,6 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Booking from "./Booking";
+import logo from "./assets/logo_clear.png";
+import hero1 from "./assets/hero/hero1.png";
+import hero2 from "./assets/hero/hero2.png";
+import hero3 from "./assets/hero/hero3.png";
+
+const heroImages = [
+  hero1,
+  hero2,
+  hero3,
+];
+
+
 
 const content = {
   en: {
@@ -22,6 +34,10 @@ const content = {
       "Capture your best moments on the waves with our professional surf filming service by Leon Barbalho.",
     contactTitle: "Contact",
     contactText: "Get in touch with us!",
+    navHome: "Home",
+    navAbout: "About",
+    navLessons: "Lessons",
+    navContact: "Contact",
   },
   pt: {
     title: "Arraial Surf School",
@@ -42,13 +58,29 @@ const content = {
       "Capture seus melhores momentos nas ondas com nosso serviço profissional de filmagem de surf por Leon Barbalho.",
     contactTitle: "Contato",
     contactText: "Entre em contato conosco!",
+    navHome: "Início",
+    navAbout: "Sobre",
+    navLessons: "Aulas",
+    navContact: "Contato",
   },
 };
 
 function App() {
   const [lang, setLang] = useState<"pt" | "en">("pt");
+  const [currentImage, setCurrentImage] = useState(0);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentImage((prevImage) =>
+      prevImage === heroImages.length - 1 ? 0 : prevImage + 1
+    );
+  }, 5000);
+
+  return () => clearInterval(interval);
+}, []);
   const t = content[lang];
   const navigate = useNavigate();
+  
 
   return (
     <Routes>
@@ -58,31 +90,125 @@ function App() {
         element={
           <div style={{ fontFamily: "Arial, sans-serif" }}>
             
-            {/* LANGUAGE SWITCH */}
-            <div
-              style={{
-                position: "fixed",
-                top: "20px",
-                right: "20px",
-                zIndex: 10,
-                display: "flex",
-                gap: "10px",
-              }}
-            >
-              <button onClick={() => setLang("pt")} style={{ fontSize: "24px", cursor: "pointer" }}>
-                🇧🇷
-              </button>
-              <button onClick={() => setLang("en")} style={{ fontSize: "24px", cursor: "pointer" }}>
-                🇺🇸
-              </button>
-            </div>
+
+            {/* NAVBAR */}
+<nav
+  style={{
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "60px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "0 40px",
+    zIndex: 1000,
+    background: "rgba(0,0,0,0.25)",
+    backdropFilter: "blur(8px)",
+    boxSizing: "border-box",
+    overflow: "visible",
+  }}
+>
+  {/* LEFT LOGO */}
+  <div
+    style={{
+      color: "white",
+      fontSize: ".5rem",
+      fontWeight: "bold",
+      letterSpacing: "2px",
+      cursor: "pointer",
+    }}
+  >
+    <img
+  src={logo}
+  alt="Arraial Surf School"
+  style={{
+    height: "60px",
+    width: "130px",
+    marginTop: "35px",
+    objectFit: "contain",
+    transform: "scale(1.6)",
+    transformOrigin: "left center",
+  }}
+/>
+  </div>
+
+  {/* RIGHT MENU + LANGUAGE */}
+<div
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: "28px",
+    color: "white",
+    fontWeight: 500,
+  }}
+>
+  <span style={{ cursor: "pointer" }}>{t.navHome}</span>
+  <span style={{ cursor: "pointer" }}>{t.navAbout}</span>
+  <span style={{ cursor: "pointer" }}>{t.navLessons}</span>
+  <span style={{ cursor: "pointer" }}>{t.navContact}</span>
+
+  {/* LANGUAGE FLAGS */}
+  <div style={{ display: "flex", gap: "8px", marginLeft: "12px" }}>
+    <button
+  onClick={() => setLang("pt")}
+  style={{
+    fontSize: "22px",
+    cursor: "pointer",
+    background:
+      lang === "pt"
+        ? "rgba(0,0,0,0.2)"
+        : "transparent",
+    border:
+      lang === "pt"
+        ? "1px solid rgba(255,255,255,0.2)"
+        : "1px solid transparent",
+    borderRadius: "8px",
+    padding: "6px 8px",
+    transition: "0.3s ease",
+    backdropFilter: "blur(6px)",
+    boxShadow:
+      lang === "pt"
+        ? "0 4px 12px rgba(255,255,255,0.4)"
+        : "none",
+  }}
+>
+  🇧🇷
+</button>
+
+    <button
+  onClick={() => setLang("en")}
+  style={{
+    fontSize: "22px",
+    cursor: "pointer",
+    background: lang === "en"
+      ? "rgba(255,255,255,0.2)"
+      : "transparent",
+    border: lang === "en"
+      ? "1px solid rgba(255,255,255,0.4)"
+      : "1px solid transparent",
+    borderRadius: "8px",
+    padding: "6px 8px",
+    transition: "0.3s ease",
+    backdropFilter: "blur(6px)",
+  }}
+>
+  🇺🇸
+</button>
+  </div>
+</div>
+</nav>
 
             {/* HERO */}
             <section
               style={{
                 height: "100vh",
-                background:
-                  "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover",
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url(${heroImages[currentImage]})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                transition: "background-image 1s ease-in-out",
                 color: "white",
                 display: "flex",
                 flexDirection: "column",
@@ -91,22 +217,31 @@ function App() {
                 textAlign: "center",
               }}
             >
-              <h1 style={{ fontSize: "3rem" }}>{t.title}</h1>
-              <p>{t.subtitle}</p>
+              <div
+  style={{
+    transform: "translateY(-180px)",
+  }}
+>
+  <h1 style={{ fontSize: "4rem" }}>{t.title}</h1>
 
-              <button
-                onClick={() => navigate("/booking")}
-                style={{
-                  marginTop: "20px",
-                  padding: "12px 24px",
-                  background: "#00bcd4",
-                  color: "white",
-                  border: "none",
-                  cursor: "pointer",
-                }}
-              >
-                {t.button}
-              </button>
+  <p style={{ fontSize: "1.5rem" }}>
+    {t.subtitle}
+  </p>
+
+  <button
+    onClick={() => navigate("/booking")}
+    style={{
+      marginTop: "20px",
+      padding: "12px 24px",
+      background: "#00bcd4",
+      color: "white",
+      border: "none",
+      cursor: "pointer",
+    }}
+  >
+    {t.button}
+  </button>
+</div>
             </section>
 
             {/* ABOUT */}
