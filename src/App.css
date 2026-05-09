@@ -52,9 +52,15 @@
 
 
   .nav-menu {
-    gap: 12px;
-    font-size: 0.82rem;
+    gap: 4px;
+    font-size: 0.7rem;
   }
+
+  .nav-menu button {
+    font-size: 16px !important;
+    padding: 2px 4px !important;
+  }
+
 
   .hero-content {
     transform: translateY(-80px);
