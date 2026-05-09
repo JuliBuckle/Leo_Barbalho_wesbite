@@ -41,9 +41,18 @@
 /* MOBILE */
 @media (max-width: 768px) {
   .navbar {
-   padding-left: 0px;
-   padding-right: 8px;
- }
+    overflow: visible;
+  }
+
+  .language-switch {
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    margin-left: 0 !important;
+    display: flex;
+    gap: 8px;
+    z-index: 2000;
+  }
 
   .logo {
     height: 72px;
