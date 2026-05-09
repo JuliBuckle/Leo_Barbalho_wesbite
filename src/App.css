@@ -40,14 +40,15 @@
 /* MOBILE */
 @media (max-width: 768px) {
   .navbar {
-    height: 82px;
-    padding: 0 12px;
-  }
+   padding-left: 0px;
+   padding-right: 8px;
+ }
 
   .logo {
     height: 62px;
     width: auto;
     margin-top: 8px;
+    margin-left: -30px;
   }
 
 
