@@ -5,6 +5,7 @@ import logo from "./assets/logo_clear.png";
 import hero1 from "./assets/hero/hero1.png";
 import hero2 from "./assets/hero/hero2.png";
 import hero3 from "./assets/hero/hero3.png";
+import "./App.css";
 
 const heroImages = [
   hero1,
