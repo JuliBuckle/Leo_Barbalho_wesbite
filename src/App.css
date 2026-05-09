@@ -1,14 +1,18 @@
 .navbar {
-  height: 90px;
-  padding: 0 40px;
+  height: 95px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  overflow: visible;
 }
 
 .logo {
-  height: 120px;
-  transform: scale(1.4);
-  transform-origin: left center;
-  margin-top: 25px;
+  height: 80px;
+  width: auto;
   object-fit: contain;
+  padding-top: 20px;
 }
 
 .nav-menu {
@@ -30,21 +34,22 @@
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
   .navbar {
-    height: 75px;
-    padding: 0 14px;
+    height: 82px;
+    padding: 0 12px;
   }
 
   .logo {
-    height: 70px;
-    transform: scale(1);
-    margin-top: 0;
+    height: 62px;
+    width: auto;
+    margin-top: 8px;
   }
+
 
   .nav-menu {
     gap: 12px;

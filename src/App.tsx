@@ -124,14 +124,7 @@ useEffect(() => {
     <img
   src={logo}
   alt="Arraial Surf School"
-  style={{
-    height: "60px",
-    width: "130px",
-    marginTop: "35px",
-    objectFit: "contain",
-    transform: "scale(1.6)",
-    transformOrigin: "left center",
-  }}
+  className="logo"
 />
   </div>
 
@@ -217,17 +210,13 @@ useEffect(() => {
                 alignItems: "center",
                 textAlign: "center",
               }}
-            >
-              <div
-  style={{
-    transform: "translateY(-180px)",
-  }}
->
-  <h1 style={{ fontSize: "4rem" }}>{t.title}</h1>
+              > 
+             
+            
+ <div className="hero-content">
+  <h1 className="hero-title">{t.title}</h1>
 
-  <p style={{ fontSize: "1.5rem" }}>
-    {t.subtitle}
-  </p>
+  <p className="hero-subtitle">{t.subtitle}</p>
 
   <button
     onClick={() => navigate("/booking")}
