@@ -144,7 +144,8 @@ useEffect(() => {
   <span style={{ cursor: "pointer" }}>{t.navContact}</span>
 
   {/* LANGUAGE FLAGS */}
-  <div style={{ display: "flex", gap: "8px", marginLeft: "12px" }}>
+  <div className="language-switch" 
+  style={{ display: "flex", gap: "8px", marginLeft: "12px" }}>
     <button
   onClick={() => setLang("pt")}
   style={{
