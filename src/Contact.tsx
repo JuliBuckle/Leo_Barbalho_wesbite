@@ -1,4 +1,5 @@
 import "./Contact.css";
+import whatsappIcon from "./assets/whatsapp.png";
 
 type Language = "pt" | "en";
 
@@ -10,15 +11,17 @@ const content = {
   pt: {
     title: "Contato",
     text: "Entre em contato conosco.",
-    whatsapp: "WhatsApp: +55 22 99978-1304",
-    email: "Email: surf@arraialsurfschool.com",
+    whatsappLabel: "WhatsApp",
+    whatsappNumber: "+55 22 99978-1304",
+    email: "surf@arraialsurfschool.com",
   },
 
   en: {
     title: "Contact",
     text: "Get in touch with us.",
-    whatsapp: "WhatsApp: +55 22 99978-1304",
-    email: "Email: surfarraialsurfschool.com",
+    whatsappLabel: "WhatsApp",
+    whatsappNumber: "+55 22 99978-1304",
+    email: "surf@arraialsurfschool.com",
   },
 };
 
@@ -34,9 +37,29 @@ export default function Contact({
 
         <p>{t.text}</p>
 
-        <p>{t.whatsapp}</p>
+        <div className="contact-whatsapp">
+          <img
+            src={whatsappIcon}
+            alt="WhatsApp"
+            className="whatsapp-icon"
+          />
 
-        <p>{t.email}</p>
+          <div>
+            <div className="whatsapp-label">
+              {t.whatsappLabel}
+            </div>
+
+            <div className="whatsapp-number">
+              {t.whatsappNumber}
+            </div>
+          </div>
+        </div>
+
+        <div className="contact-email">
+          <strong>Email:</strong>
+
+          <div>{t.email}</div>
+        </div>
       </div>
     </section>
   );

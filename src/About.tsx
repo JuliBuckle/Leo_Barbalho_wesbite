@@ -27,7 +27,7 @@ const content = {
   pt: {
     heroTitle: "Arraial Surf School",
     heroText:
-      "Mais do que aulas de surf. Uma experiência vivida por quem nasceu no mar.",
+      "Mais do que aulas de surf. Uma experiência vivida com quem nasceu no mar.",
 
     historyLabel: "Nossa história",
     brothersTitle: "Os irmãos Barbalho",
