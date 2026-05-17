@@ -1,0 +1,273 @@
+.about-page {
+  background: #f5efe6;
+  color: #003b5c;
+  font-family: Arial, sans-serif;
+}
+
+/* HERO */
+
+.about-hero {
+  height: 90vh;
+  min-height: 700px;
+  background-image:
+    linear-gradient(rgba(0, 35, 55, 0.35), rgba(0, 35, 55, 0.35)),
+    url("/images/arraial-hero.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.about-hero-overlay {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 180px 8% 0;
+  color: white;
+  background: transparent;
+}
+
+.about-hero h1 {
+  font-size: clamp(3rem, 8vw, 7rem);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.05;
+  max-width: 1000px;
+}
+
+.about-hero p {
+  font-size: clamp(1.1rem, 2vw, 1.8rem);
+  max-width: 650px;
+  margin: 20px auto 0;
+}
+
+/* INTRO */
+
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 100px 8%;
+  align-items: center;
+}
+
+.about-intro-image img {
+  width: 100%;
+  height: 620px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.about-intro-text h2,
+.profile-text h2,
+.gallery-section h2,
+.about-cta h2 {
+  font-size: clamp(2.3rem, 5vw, 4.5rem);
+  margin: 10px 0 25px;
+  line-height: 1;
+}
+
+.about-intro-text p,
+.profile-text p,
+.about-cta p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #244b5f;
+}
+
+.section-label {
+  color: #008cba;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* PROFILE SECTIONS */
+
+.profile-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 50px;
+  padding: 100px 8%;
+  align-items: center;
+}
+
+.profile-section.reverse {
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.profile-text {
+  max-width: 520px;
+}
+
+/* CAROUSEL */
+
+.carousel {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+}
+
+.carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background: #008cba;
+  border-radius: 20px;
+}
+
+.carousel img {
+  min-width: 700px;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 28px;
+  scroll-snap-align: center;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* FULL BANNER */
+
+.full-banner {
+  height: 30vh;
+  background-image:
+    linear-gradient(rgba(0, 35, 55, 0.35), rgba(0, 35, 55, 0.35)),
+    url("/images/arraial-drone.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.full-banner h2 {
+  color: white;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  max-width: 900px;
+  line-height: 1;
+}
+
+/* GALLERY */
+
+.gallery-section {
+  padding: 100px 8%;
+  text-align: center;
+}
+
+.gallery-grid {
+  margin-top: 50px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.gallery-grid img:nth-child(2) {
+  margin-top: 50px;
+}
+
+.gallery-grid img:nth-child(4) {
+  margin-top: 50px;
+}
+
+/* CTA */
+
+.about-cta {
+  background: #003b5c;
+  color: white;
+  text-align: center;
+  padding: 100px 8%;
+}
+
+.about-cta p {
+  color: #e6f7fb;
+}
+
+.about-cta a {
+  display: inline-block;
+  margin-top: 30px;
+  background: #008cba;
+  color: white;
+  text-decoration: none;
+  padding: 16px 34px;
+  border-radius: 999px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.about-cta a:hover {
+  background: white;
+  color: #003b5c;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .about-intro,
+  .profile-section,
+  .profile-section.reverse {
+    grid-template-columns: 1fr;
+    padding: 70px 6%;
+  }
+
+  .about-intro-image img {
+    height: 440px;
+  }
+
+  .carousel img {
+   min-width: 90vw;
+   height: 420px;
+}
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-grid img {
+    height: 280px;
+  }
+
+  .full-banner {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-hero {
+    height: 75vh;
+  }
+
+  .about-hero-overlay {
+    padding: 100px 6%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img,
+  .gallery-grid img:nth-child(2),
+  .gallery-grid img:nth-child(4) {
+    margin-top: 0;
+  }
+}

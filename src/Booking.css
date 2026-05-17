@@ -1,0 +1,115 @@
+.booking-page {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15)
+    ),
+    url("/images/booking-bg.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Arial, sans-serif;
+}
+
+.booking-overlay {
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+}
+
+.back-button {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+
+  padding: 12px 20px;
+  border-radius: 12px;
+
+  cursor: pointer;
+  font-size: 16px;
+
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.booking-card {
+  max-width: 600px;
+  margin: 0 auto;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+
+  padding: 60px 40px;
+  border-radius: 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  color: white;
+}
+
+.booking-card h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+
+.booking-card p {
+  font-size: 22px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.whatsapp-button {
+  display: inline-block;
+
+  background: #25d366;
+  color: white;
+
+  text-decoration: none;
+
+  padding: 18px 38px;
+  border-radius: 16px;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.05);
+  background: #1ebe5d;
+}
+
+@media (max-width: 768px) {
+  .booking-card {
+    padding: 40px 25px;
+  }
+
+  .booking-card h1 {
+    font-size: 38px;
+  }
+
+  .booking-card p {
+    font-size: 18px;
+  }
+
+  .whatsapp-button {
+    width: 100%;
+    padding: 18px 0;
+  }
+}

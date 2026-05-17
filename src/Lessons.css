@@ -1,0 +1,175 @@
+.lessons-page {
+  min-height: 100vh;
+  padding: 130px 20px 60px;
+
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.10),
+      rgba(255,255,255,0.10)
+    ),
+    url("/images/lessons-bg.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  font-family: Arial, sans-serif;
+}
+.lessons-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.lessons-title {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: #073b5c;
+}
+
+.lessons-subtitle {
+  font-size: 22px;
+  color: #5f6f7a;
+  margin-bottom: 40px;
+}
+
+.lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.lesson-card {
+  background: white;
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.lesson-card-title {
+  font-size: 26px;
+  color: #073b5c;
+  margin-bottom: 22px;
+}
+
+.lesson-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.lesson-table th {
+  background: #00a8c8;
+  color: white;
+  padding: 14px;
+  font-size: 18px;
+  text-align: left;
+}
+
+.lesson-table td {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 17px;
+  text-align: left;
+  color: #333;
+}
+
+.lesson-table .price {
+  text-align: right;
+  color: #073b5c;
+  font-weight: bold;
+}
+
+.lesson-table th:last-child {
+  text-align: right;
+  padding-right: 28px;
+}
+
+.lessons-note {
+  margin-top: 35px;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+
+.pix-box {
+  margin-top: 50px;
+
+  background: rgba(255,255,255,0.92);
+
+  padding: 35px;
+
+  border-radius: 24px;
+
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.pix-box h3 {
+  font-size: 32px;
+  color: #073b5c;
+  margin-bottom: 20px;
+}
+
+.pix-key {
+  background: #f2f2f2;
+
+  padding: 18px;
+
+  border-radius: 12px;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  margin: 20px 0;
+
+  word-break: break-word;
+}
+
+.pix-whatsapp {
+  display: inline-block;
+
+  background: #25d366;
+  color: white;
+
+  padding: 16px 28px;
+
+  border-radius: 14px;
+
+  text-decoration: none;
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.pix-whatsapp:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .lessons-page {
+    padding-top: 110px;
+  }
+
+  .lessons-title {
+    font-size: 38px;
+  }
+
+  .lessons-subtitle {
+    font-size: 18px;
+  }
+
+  .lesson-card {
+    padding: 20px;
+  }
+
+  .lesson-table th,
+  .lesson-table td {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
