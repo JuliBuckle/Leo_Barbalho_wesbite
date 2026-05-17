@@ -33,6 +33,10 @@
   margin-bottom: 40px;
 }
 
+.special-prices-card {
+  margin-top: 60px;
+}
+
 .lessons-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
