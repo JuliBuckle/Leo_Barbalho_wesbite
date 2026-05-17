@@ -1,5 +1,3 @@
-import React from "react";
-
 type Language = "pt" | "en";
 
 type HomeProps = {
