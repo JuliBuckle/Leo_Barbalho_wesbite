@@ -21,6 +21,9 @@ const leonnPhotos: string[] = [
   "/images/leon-5.jpg",
   "/images/leon-6.jpg",
   "/images/leon-7.jpg",
+  "/images/leon-8.jpg",
+
+
 ];
 
 const content = {
@@ -42,7 +45,7 @@ const content = {
     leoTitle: "Léo Barbalho",
 
     leoText:
-      "Léo Barbalho é surfista profissional, freesurfer e apaixonado pela água desde muito novo. Com mais de 10 anos de experiência, ele possui um dom natural para ensinar alunos de todos os níveis.",
+      "Léo Barbalho é surfista profissional, freesurfer e apaixonado pela água desde muito novo. Com mais de 10 anos de experiência, ele possui um dom natural para ensinar alunos de todos os níveis. Ele é instrutor de surf certificado pelo Ibrasurf e tem uma conexão profunda com o oceano, tornando-o o guia perfeito para sua jornada no surf.",
 
     banner: "Nascidos e criados em Arraial do Cabo",
 
@@ -51,6 +54,9 @@ const content = {
 
     leonnText:
       "Leon Barbalho é filmmaker profissional premiado, com trabalhos publicados em diversas revistas. Seu olhar artístico traz um diferencial especial para a escola.",
+    
+    surflineLink: "Ver publicação na Surfline",
+
 
     galleryLabel: "Caribe Brasileiro",
     galleryTitle: "Surf, mar e experiência",
@@ -80,7 +86,7 @@ const content = {
     leoTitle: "Léo Barbalho",
 
     leoText:
-      "Léo Barbalho is a professional surfer and freesurfer with more than 10 years of experience and a natural talent for teaching students of all levels.",
+      "Léo Barbalho is a professional surfer and freesurfer with more than 10 years of experience and a natural talent for teaching students of all levels. He is a cerified surf instructor by Ibrasurf and has a deep connection with the ocean, making him the perfect guide for your surf journey.",
 
     banner: "Born and raised in Arraial do Cabo",
 
@@ -89,6 +95,8 @@ const content = {
 
     leonnText:
       "Leon Barbalho is an award-winning filmmaker whose work has been published in several magazines.",
+
+    surflineLink: "View Surfline publication",  
 
     galleryLabel: "Brazilian Caribbean",
     galleryTitle: "Surf, ocean and experience",
@@ -152,6 +160,8 @@ export default function About({
           <h2>{t.leoTitle}</h2>
 
           <p>{t.leoText}</p>
+
+
         </div>
 
         <div className="carousel">
@@ -187,6 +197,17 @@ export default function About({
           <h2>{t.leonnTitle}</h2>
 
           <p>{t.leonnText}</p>
+          <a
+  href="https://www.surfline.com/surf-news/kelly-slater-barreled-barrinha/55317"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="surfline-link"
+>
+  {t.surflineLink}
+</a>
+
+
+
         </div>
       </section>
 
